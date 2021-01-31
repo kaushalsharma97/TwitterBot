@@ -14,14 +14,13 @@ def limit_handle(cursor):
 	except tweepy.RateLimitError:
 		time.sleep(300)
 
-
+#LikeBot
 search_string = 'Python'
 numbersOfTweets = 2
 
 for tweet in tweepy.Cursor(api.search,search_string).items(numbersOfTweets):
 	tweet.favorite()
 	print('I liked it!')
-
 
 #generous bot
 # for follower in limit_handle(tweepy.Cursor(api.followers).items()):
